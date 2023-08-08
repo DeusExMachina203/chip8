@@ -15,13 +15,13 @@ class Renderer {
   setPixel(x, y) {
     if(x > this.cols){
       x-=this.cols;
-    }else if(x< this.cols){
+    }else if(x< 0){
       x+=this.cols;
     }
 
     if(y > this.rows){
       y-=this.rows;
-    }else if(y< this.rows){
+    }else if(y< 0){
       y+=this.rows;
     }
 
@@ -32,7 +32,7 @@ class Renderer {
   }
 
   clear(){
-    this.display = new Array (this.cols, this.rows);
+    this.display = new Array(this.cols * this.rows);
   }
 
   render(){
@@ -50,9 +50,9 @@ class Renderer {
     }
   }
 
-  test_render(){
+  testRender(){
     this.setPixel(0,0);
-    this.setPixel(5,2);
+    this.setPixel(1,1);
   }
 }
 
