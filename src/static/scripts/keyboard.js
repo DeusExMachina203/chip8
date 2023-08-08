@@ -25,5 +25,20 @@ class Keyboard {
     window.addEventListener('keydown', this.onKeyDown.bind(this), false);
     window.addEventListener('keyup', this.onKeyUp.bind(this), false);
   }
+  isKeyPressed(keycode){
+    return this.keysPressed[keycode];
+  }
+  onKeyDown(event){
+    let key = this.KEYMAP[event.which];
+    this.keysPressed[key] = true;
 
+    if(this.onNextKeyPress !== null && key){
+      this.onNextKeyPress(parseInt(key));
+      this.onNextKeyPress = null;
+    }
+  }
+  onKeyUp(event){
+    let key = this.KEYMAP[event.which];
+    this.keysPressed[key] = false;
+  }
 }
