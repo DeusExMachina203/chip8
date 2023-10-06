@@ -63,7 +63,7 @@ class CPU{
             }
         }
 
-        request.open('GET', 'roms/' + romName);
+        request.open('GET', '../roms/' + romName);
         request.responseType = 'arraybuffer';
 
         request.send();
