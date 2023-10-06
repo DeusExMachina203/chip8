@@ -47,7 +47,7 @@ class CPU{
     }
 
     loadProgramIntoMemory(program){
-        for(let loc = 0; loc<program.lenght; loc++){
+        for(let loc = 0; loc<program.length; loc++){
             this.memory[0x200 + loc] = program[loc];
         }
     }
