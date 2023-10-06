@@ -42,3 +42,5 @@ class Keyboard {
     this.keysPressed[key] = false;
   }
 }
+
+export default Keyboard;
