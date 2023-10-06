@@ -17,12 +17,9 @@ function init() {
   fpsInterval = 1000/fps;
   then = Date.now();
   startTime = then;
-  //test
-  console.log("renderingggg");
-  renderer.testRender();
-  renderer.render();
-  //endtest
-
+  
+  cpu.loadSpritedIntoMemory();
+  cpu.loadRom("BLITZ");
   loop = requestAnimationFrame(step);
 }
 
@@ -32,7 +29,7 @@ function step(){
 
   if(elapsed > fpsInterval){
 
-    //cycles
+    cpu.cycle();
 
   }
 
