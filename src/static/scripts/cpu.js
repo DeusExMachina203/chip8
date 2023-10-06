@@ -15,7 +15,7 @@ class CPU{
 
         this.pc = 0x200;
 
-        this.stack = newArray();
+        this.stack = new Array();
 
         this.paused = false;
 
